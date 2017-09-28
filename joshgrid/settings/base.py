@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'joshgrid.mail_app.context_processors.set_environment',
             ],
         },
     },
@@ -164,7 +165,10 @@ DEFAULT_FROM_EMAIL = dotenv.get(
 
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'bundles/',
+        'BUNDLE_DIR_NAME': '/',
         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+        'POLL_INTERVAL': 0.1,
+        'TIMEOUT': None,
+        'IGNORE': ['.+\.hot-update.js', '.+\.map']
     }
 }
