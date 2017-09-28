@@ -17,10 +17,5 @@ celerybeat.pid
 dump.rdb
 yarn-error.log
 node_modules/
-bower_components/
-client/bundles/
 webpack-stats.json
-client/css/animate.css/
-client/css/bulma/
 venv/
-static/

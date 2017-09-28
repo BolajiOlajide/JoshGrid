@@ -10,6 +10,8 @@ DATABASES = {
     'default': dj_database_url.config()
 }
 
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+
 ALLOWED_HOSTS = ['*']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

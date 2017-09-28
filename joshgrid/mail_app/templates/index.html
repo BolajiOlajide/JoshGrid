@@ -23,6 +23,11 @@
   </head>
   <body>
     <div id="app"></div>
-    {% render_bundle 'main' 'js' %}
+    {% if environment == 'production' %}
+        <script src="{% static 'js/vendor.js' %}"></script>
+        <script src="{% static 'js/app.js' %}"></script>
+    {% else %}
+        {% render_bundle 'main' %}
+    {% endif %}
   </body>
 </html>
